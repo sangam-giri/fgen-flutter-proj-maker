@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:fgen/src/core/data/contents/dart_file.dart';
 import 'package:fgen/src/core/enums/platform_enum.dart';
 import 'package:fgen/src/core/services/generator.dart';
 import 'package:path_provider/path_provider.dart';
@@ -27,18 +28,7 @@ class Execute {
     createCommand = '$createCommand $projectName';
 
     // Generate the Dart script to create the folder inside the Flutter project
-    String script = '''import 'dart:io';
-
-void main() {
-  Directory dir = Directory("lib/hello");
-  if (!dir.existsSync()) {
-    dir.createSync(recursive: true);
-    print("Folder created");
-  } else {
-    print("Folder already exists");
-  }
-}
-''';
+    String script = dartFile;
 
     // Create a temporary Dart file to execute later
     Directory tempDir = await getTemporaryDirectory();

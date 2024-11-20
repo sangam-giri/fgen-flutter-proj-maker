@@ -1,7 +1,7 @@
 enum PlatformEnum {
   android(key: 'android'),
-  ios(key: 'ios'),
-  mac(key: 'mac'),
+  iOS(key: 'ios'),
+  macOS(key: 'mac'),
   linux(key: 'linux'),
   windows(key: 'windows');
 
