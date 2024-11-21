@@ -211,7 +211,7 @@ class _ProjectMakerPageState extends State<ProjectMakerPage> {
                         controller: _packageNameController,
                         decoration: const InputDecoration(
                           labelText: 'Package Name',
-                          hintText: 'e.g., com.example.app',
+                          hintText: 'e.g., com.example',
                           border: OutlineInputBorder(),
                         ),
                       ),

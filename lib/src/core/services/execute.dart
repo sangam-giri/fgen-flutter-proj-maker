@@ -15,7 +15,7 @@ class Execute {
     String createCommand = 'call flutter create';
 
     if (packageName != null) {
-      createCommand = '--org $packageName';
+      createCommand = '$createCommand --org $packageName';
     }
     if (platforms != null && platforms.isNotEmpty) {
       List<String> selectedPlatforms = [];
@@ -28,7 +28,7 @@ class Execute {
     createCommand = '$createCommand $projectName';
 
     // Generate the Dart script to create the folder inside the Flutter project
-    String script = dartFile;
+    String script = DartFile().dartFile;
 
     // Create a temporary Dart file to execute later
     Directory tempDir = await getTemporaryDirectory();
@@ -61,6 +61,8 @@ echo Dart script executed successfully.
 
 endlocal
 ''';
+
+    print('Command: $command');
     // Execute the batch command
     await BatExecuter.execute(command, tempDartFile);
   }

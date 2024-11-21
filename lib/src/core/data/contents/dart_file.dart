@@ -1,4 +1,5 @@
-String dartFile = """
+class DartFile {
+  String dartFile = """
 import 'dart:io';
 
 void main() {
@@ -33,8 +34,7 @@ class App extends StatelessWidget {
     );
   }
 }
-
 ''');
 }
-
 """;
+}
